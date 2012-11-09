@@ -101,7 +101,7 @@ class temp_oldclustersource_Saver(threading.Thread):
 				self.last_recorded_time = time.time()
 				meas_time = sqlTime()
 				val = "%.5g" % temp_oldclustersource
-				gauge_sql = "insert into temperature_oldclusterce set time=\"" +  meas_time + "\", temperature = " + val
+				gauge_sql = "insert into temperature_oldclusterce_aggregation  set time=\"" +  meas_time + "\", temperature = " + val
 				print gauge_sql
 				sqlInsert(gauge_sql)
 
@@ -121,7 +121,7 @@ class temp_nanobeam_Saver(threading.Thread):
 				self.last_recorded_time = time.time()
 				meas_time = sqlTime()
 				val = "%.5g" % temp_nanobeam
-				gauge_sql = "insert into temperature_omicron_nanobeam set time=\"" +  meas_time + "\", temperature = " + val
+				gauge_sql = "insert into temperature_omicron_nanobeam_aggregation set time=\"" +  meas_time + "\", temperature = " + val
 				print gauge_sql
 				sqlInsert(gauge_sql)
 		
